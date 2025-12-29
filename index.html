@@ -2,7 +2,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HBD love</title>	    
+    <title>HAPPY NEW YEAR</title>	    
     <link type="text/css" rel="stylesheet" href="file/default.css">
     <script type="text/javascript" src="file/jquery.min.js"></script>
     <script type="text/javascript" src="file/jscex.min.js"></script>
@@ -18,25 +18,38 @@
             var audio = document.getElementById("myAudio");
             audio.play();
         }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('myAudio');
+            audio.volume = 1.0;
+            
+            // Seamless loop handling
+            audio.addEventListener('timeupdate', function() {
+                if (this.duration - this.currentTime < 0.1) {
+                    this.currentTime = 0;
+                    this.play();
+                }
+            });
+        });
     </script>
 </head>
 <body>
     <div id="main">
         <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
-            <source src="aud.mp3" type="audio/mp3" />
-            <embed height="100" width="100" src="aud.mp3" />
+        <audio autoplay="autoplay" loop preload="auto" height="100" width="100" id="myAudio">
+            <source src="love.mpeg" type="audio/mpeg" />
+            <embed height="100" width="100" src="love.mpeg" />
         </audio>
         <div id="wrap">
             <div id="text">
                 <div id="code">
-                    <span class="say">Hey you 💞</span><br>
-                    <span class="say">Happy Birthday 🎈</span><br>
-                    <span class="say">May God bless you 🍀</span><br>
-                    <span class="say">And give u many happiness 💕</span><br>
-                    <span class="say">Just saying... you're pretty awesome ❤️</span><br>
-                    <span class="say">Sending good vibes and maybe a wink 😏</span><br>
-                    <span class="say">Hope u have a great day today ❤️😘</span><br>
+                    <span class="say">Oey Kothi💞</span><br>
+                    <span class="say">Happy New Year rahh Bujji🎈</span><br>
+                    <span class="say">Manam ilane lifelong kalisi undali rahh Bujji🍀</span><br>
+                    <span class="say">Manam Inka Ilane chala memmories chesukovali rahh💕</span><br>
+                    <span class="say">Nuvvu eppudu happy ga undali rahh  ❤️</span><br>
+                    <span class="say">Manam Happy Ga undali rahh Bujji ❤️❤️</span><br>
+                    <span class="say">YOU ARE MY ENDLESS HAPPINESS❤️😘</span><br>
                 </div>
             </div>
             <div id="clock-box">

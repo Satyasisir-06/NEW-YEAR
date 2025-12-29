@@ -28,6 +28,23 @@ $(window).resize(function() {
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
 					clearInterval(timer);
+					// Fade out audio when typing is complete
+					var audio = document.getElementById('myAudio');
+					if (audio) {
+						var fadeOutDuration = 3000; // 3 seconds fade
+						var fadeOutSteps = 50;
+						var fadeOutInterval = fadeOutDuration / fadeOutSteps;
+						var volumeStep = audio.volume / fadeOutSteps;
+						var fadeOut = setInterval(function() {
+							if (audio.volume > volumeStep) {
+								audio.volume -= volumeStep;
+							} else {
+								audio.volume = 0;
+								clearInterval(fadeOut);
+								audio.pause();
+							}
+						}, fadeOutInterval);
+					}
 				}
 			}, 75);
 		});
